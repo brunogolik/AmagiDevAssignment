@@ -18,10 +18,8 @@ packets have been inserted (after the midpoint, it would linearly decrease).
 The most expensive part of the process is the insertion into the binary
 file. In order to "squeeze" the new payload into the file, the tailing data
 (the data that comes after the payload's rightful position) must be copied
-to a temporary file and then returned after tha payload has been inserted
-(alternatively, the process can be done without a second file through buffers,
-but the logic is slightly more complex. In my implementation, I use a temporary
-file). Since the problem requires that the file be updated each time a new packet 
+to a temporary file and then returned after tha payload has been inserted.
+Since the problem requires that the file be updated each time a new packet 
 arrives, the cost of this operation could potentially make the process slow. 
 
 Therefore, if speed is crucial, and there are no working memory restrictions, 
